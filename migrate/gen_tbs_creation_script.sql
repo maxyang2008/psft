@@ -10,9 +10,8 @@ BEGIN
                                     'PRETTY',
                                     true);
 END;
+/
 
-
-
- SELECT DBMS_METADATA.get_ddl('TABLESPACE', tablespace_name)
-   FROM dba_tablespaces
-  WHERE tablespace_name not in ('SYSTEM', 'SYSAUX', 'USERS', 'UNDOTBS1');
+SELECT DBMS_METADATA.get_ddl('TABLESPACE', tablespace_name)
+FROM dba_tablespaces
+WHERE tablespace_name not in ('SYSTEM', 'SYSAUX', 'USERS', 'UNDOTBS1');
